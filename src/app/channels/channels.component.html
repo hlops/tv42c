@@ -1,3 +1,28 @@
-<p>
-  channels works!
-</p>
+<h4>Channels</h4>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <ul class="list-group" data-spy="scroll" data-target="#navbar-example">
+        <li class="list-group-item" [id]="transliterate(channel._group)"
+            *ngFor="let channel of filteredChannels">{{channel._name}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <div class="float-container" style="position: fixed">
+        <input type="text" class="form-control"
+               [formControl]="queryControl" [(ngModel)]="query" placeholder="Search..."/>
+        <div class="dropdown-menu bd-search-results" id="search-results"></div>
+        <nav>
+          <ul class="list-group" id="navbar-example">
+            <li class="list-group-item "
+                *ngFor="let group of filteredGroups">
+              <a class="nav-link" href="channels#{{transliterate(group)}}">{{group}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
