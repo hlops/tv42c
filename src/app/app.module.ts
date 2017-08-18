@@ -10,11 +10,24 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from './common/SearchPipe';
+import { SourcesComponent } from './sources/sources.component';
+import {SourceService} from "./sources/source.service";
+import { ScheduleComponent } from './schedule/schedule.component';
+import {ScheduleService} from "./schedule/schedule.service";
 
 @NgModule({
-	declarations: [AppComponent, NavbarComponent, ActionsComponent, ChannelsComponent, SearchPipe],
+	declarations: [
+		AppComponent,
+		NavbarComponent,
+		ActionsComponent,
+		ChannelsComponent,
+		SourcesComponent,
+		SearchPipe,
+		SourcesComponent,
+		ScheduleComponent
+	],
 	imports: [BrowserModule, AppRoutingModule, HttpModule, FormsModule, ReactiveFormsModule],
-	providers: [ActionService, ChannelService],
+	providers: [ActionService, ChannelService, SourceService, ScheduleService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
